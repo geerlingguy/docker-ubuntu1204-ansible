@@ -1,8 +1,7 @@
 FROM ubuntu:12.04
 MAINTAINER Jeff Geerling
 
-ENV DEBIAN_FRONTEND noninteractive
-
+# Install dependencies.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
        software-properties-common \
@@ -10,7 +9,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
     && apt-get clean
-# Install Ansible
+# Install Ansible.
 RUN apt-add-repository -y ppa:ansible/ansible \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
