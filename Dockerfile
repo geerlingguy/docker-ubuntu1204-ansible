@@ -16,7 +16,7 @@ RUN apt-add-repository -y ppa:ansible/ansible \
        ansible \
     && rm -rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
-    && touch -m -t 200101010101.01 /var/lib/apt/periodic/update-success-stamp \
+    && touch -m -t 200101010101.01 /var/lib/apt/lists \
     && apt-get clean
 
 # Install Ansible inventory file
