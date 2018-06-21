@@ -21,3 +21,6 @@ RUN apt-add-repository -y ppa:ansible/ansible \
 
 # Install Ansible inventory file
 RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
+
+# put initctl back
+RUN rm -f /sbin/initctl && dpkg-divert --local --rename --remove /sbin/initctl
